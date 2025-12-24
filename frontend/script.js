@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const backendUrl = 'http://localhost:5000/api'; // API base URL
+  const backendUrl = '/api'; // API base URL
   let isLoggedIn = false;
   let pendingAction = null; // Stores the action to perform after login { action: 'view' | 'snapshot', card: element }
   let token = localStorage.getItem('token');
