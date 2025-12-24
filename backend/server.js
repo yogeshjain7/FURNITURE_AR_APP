@@ -14,6 +14,9 @@ app.use(cors({
 // --- End of CORS Configuration ---
 
 
+// Serve static files from the frontend directory
+app.use(express.static('../frontend'));
+
 // Middleware to parse incoming JSON requests
 app.use(express.json());
 
