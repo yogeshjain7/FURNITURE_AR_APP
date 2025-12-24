@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const Furniture = require('../../backend/models/furniture');
+const Furniture = require('../models/furniture');
 
 const verifyToken = (token) => {
   try {
@@ -10,7 +10,7 @@ const verifyToken = (token) => {
   }
 };
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   await mongoose.connect(process.env.MONGO_URI);
 
   const authHeader = req.headers.authorization;
