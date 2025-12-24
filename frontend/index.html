@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style My Home - AR Furniture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Style My Home</h1>
+    <nav>
+      <span id="welcome-message" style="display: none;"></span>
+      <a href="#products">Products</a>
+      <button id="login-nav-btn" class="nav-button">Login / Sign Up</button>
+      <button id="logout-btn" class="nav-button" style="display: none;">Logout</button>
+      <button id="install-btn" style="display: none;">Install App</button>
+    </nav>
+  </header>
+
+  <section id="slideshow-container">
+    <div class="slideshow">
+      <div class="slide"><img src="assets/ads/ad-banner-1.png" alt="Ad for new luxury sofas"><div class="slide-caption"><h2>The Elysian Collection</h2><p>Discover unmatched comfort and timeless design.</p></div></div>
+      <div class="slide"><img src="assets/ads/ad-banner-2.png" alt="Ad for designer lighting"><div class="slide-caption"><h2>Illuminate Your World</h2><p>Handcrafted lighting for every space.</p></div></div>
+      <div class="slide"><img src="assets/ads/ad-banner-3.png" alt="Ad for handcrafted wooden tables"><div class="slide-caption"><h2>Artisanal Woodcraft</h2><p>Where functionality meets fine art.</p></div></div>
+    </div>
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="filter-controls">
+      <input type="search" id="search-bar" placeholder="Search furniture...">
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="chair">Chairs</button>
+        <button class="filter-btn" data-category="table">Tables</button>
+        <button class="filter-btn" data-category="bed">Beds</button>
+        <button class="filter-btn" data-category="storage">Storage</button>
+      </div>
+    </div>
+
+    <div class="product-grid"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Style My Home. All rights reserved.</p>
+  </footer>
+
+  <div id="auth-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button id="auth-modal-close-btn" class="modal-close">&times;</button>
+      <form id="signup-form">
+        <h2>Create Your Account</h2>
+        <input type="text" id="signup-username" class="form-input" placeholder="Username" required>
+        <input type="tel" id="signup-mobile" class="form-input" placeholder="Mobile Number" required>
+        <input type="password" id="signup-password" class="form-input" placeholder="Password" minlength="6" required>
+        <button type="submit" class="btn">Sign Up</button>
+        <p class="form-switch">Already have an account? <a href="#" id="show-login">Log In</a></p>
+      </form>
+      <form id="login-form" style="display:none;">
+        <h2>Welcome Back</h2>
+        <input type="text" id="login-username" class="form-input" placeholder="Username" required>
+        <input type="password" id="login-password" class="form-input" placeholder="Password" minlength="6" required>
+        <button type="submit" class="btn">Log In</button>
+        <p class="form-switch">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="related-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close">&times;</button>
+      <h2>You might also like...</h2>
+      <div id="related-items-grid" class="product-grid"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
